@@ -26,8 +26,8 @@
                         
                         %div{class:"nav-collapse fr"}
                             %ul.nav
-                                %li.active= link_to "Home", "/"
-                                %li= link_to "Speakers", "speakers"
+                                %li{class: menu_item_class(:index)}= link_to "Home", root_path
+                                %li{class: menu_item_class(:speakers)}= link_to "Speakers", speakers_path
                                 %li
                                     %button.btn{class:"btn-primary"}= link_to "Book Now", "http://thedigitaldoctor-estw.eventbrite.co.uk/", id:"top-button"
                                     
@@ -37,15 +37,10 @@
         %footer.row
             .container
                 .row
-                    .span2
+                    .span4
                         %h3 Quick links
                         %ul
                             %li= link_to "Home", "/" 
-                            
-                    .span2
-                        %br
-                        %br
-                        %ul
                             %li=link_to "Book a place", "http://thedigitaldoctor-estw.eventbrite.co.uk/"
                             
                     .span4{class:"social-networks"}
