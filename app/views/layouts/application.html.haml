@@ -1,0 +1,76 @@
+!!!
+%html
+    %head
+        %title The Digital Doctor Conference
+        =stylesheet_link_tag    "application", :media => "all"
+        =javascript_include_tag "application"   
+        =csrf_meta_tags
+        
+        %link{href:'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800', rel:'stylesheet', type:'text/css'}
+    
+        :css
+            #top-button { color: white; }
+            a#top-button:hover { text-decoration: none;}
+            
+    %body
+        %header#header
+            .navbar
+                %div{class:"navbar-inner"}
+                    .container
+                        %a.btn{class: "btn-navbar", data: {toggle:"collapse", target:".nav-collapse"}}
+                            %span{class:"icon-bar"}
+                            %span{class:"icon-bar"}
+                            %span{class:"icon-bar"}
+                            
+                        %a.brand{href:"/"} The <b>Digital Doctor</b>
+                        
+                        %div{class:"nav-collapse fr"}
+                            %ul.nav
+                                %li.active= link_to "Home", "/"
+                                %li= link_to "Speakers", "speakers"
+                                %li
+                                    %button.btn{class:"btn-primary"}= link_to "Book Now", "http://thedigitaldoctor-estw.eventbrite.co.uk/", id:"top-button"
+                                    
+            #content.container= yield
+            
+            
+        %footer.row
+            .container
+                .row
+                    .span2
+                        %h3 Quick links
+                        %ul
+                            %li= link_to "Home", "/" 
+                            
+                    .span2
+                        %br
+                        %br
+                        %ul
+                            %li=link_to "Book a place", "http://thedigitaldoctor-estw.eventbrite.co.uk/"
+                            
+                    .span4{class:"social-networks"}
+                        %h3 Stay in touch
+                        %p Stay in touch on social networks
+                        =link_to "", "https://www.facebook.com/pages/The-Digital-Doctor/331213556974049", class: "icon-facebook", title:"Follow us on Facebook"
+                        =link_to "", "https://twitter.com/TheDigiDoc", title:"Follow us on Twitter", class:"icon-twitter"
+                    .span4
+                        %h3 Newsletter
+                        %p Subscribe to our newsletter and be the first to know about the conference news!
+                        %form{action:"http://podmedics.us1.list-manage.com/subscribe/post?u=c2ce3448b95ec17ff50421ec7&amp;id=eafca49ff8", method:"post", id:"mc-embedded-subscribe-form", name:"mc-embedded-subscribe-form", class:"validate", target:"_blank", novalidate:"true"}
+                            %input{type:"email", value:"", name:"EMAIL", id:"mce-EMAIL", placeholder:"Enter your E-mail", required: true}
+                            %input.btn{type:"submit", value:        "Ok"}
+                            
+
+        %div{id:"footer-extra"}
+            .container
+                .row
+                    .span4
+                        Website &copy; 2012 Podmedics Ltd
+                    .span4
+                        %i{class:"icon-phone"}
+                        &nbsp; 
+                        02078352320
+                    .span4
+                        %i{class:"icon-envelope"}
+                        &nbsp; 
+                        info@thedigitaldoc.co.uk

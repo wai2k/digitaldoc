@@ -1,8 +1,23 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require_tree ../../../vendor/assets/stylesheets/
+ */
+
 /* --------------------------------------------------------	*/
 /*	Twitter Bootstrap */
 /* --------------------------------------------------------	*/
 
-@import url("bootstrap/bootstrap.min.css");
+@import "bootstrap/bootstrap.min.css";
 
 /* --------------------------------------------------------	*/
 /*	Base */
@@ -17,8 +32,6 @@ html {
 }
 body {
 	font-family: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
-	/*background:url(../img/body-top.png) #fff repeat-x;
-	padding-top:3px;*/
 	border-top:5px solid #E0E8EA;
 }
 
@@ -209,7 +222,7 @@ footer input[type=submit].btn {
 	color:#222;
 }
 .navbar .nav > li.active > a {
-	background-image:url(../img/navbar-active-item.png);
+	background-image:image-url('navbar-active-item.png');
 	background-position:center bottom;
 	background-repeat:no-repeat;	
 }
@@ -276,7 +289,7 @@ footer input[type=submit].btn {
 #macbook_carousel {
 	position:relative;
 	height:540px;
-	background:url(../img/mac.png) top center no-repeat;
+	background:image-url('mac.png') top center no-repeat;
 	margin:30px 0 0px 0;
 }
 #macbook_carousel .carousel {
@@ -543,7 +556,7 @@ footer input[type=submit].btn {
 	margin-left:-24px;
 	margin-top:-16px;
 	cursor:pointer;
-	background:url(../img/icon-zoom.png) center center no-repeat;
+	background:image-url('icon-zoom.png') center center no-repeat;
 }
 .not-ie .zoom .zoom-overlay {
 	display:block;
