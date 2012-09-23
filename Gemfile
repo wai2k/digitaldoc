@@ -7,6 +7,7 @@ gem 'sqlite3', :platform => [:ruby]
 
 gem 'jquery-rails'
 gem 'haml'
+gem 'paperclip'
 
 # Gems used only for assets and not required
 # in production environments by default.
