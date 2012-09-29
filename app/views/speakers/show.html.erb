@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @speaker.name %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @speaker.position %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @speaker.bio %>
+</p>
+
+<p>
+  <b>Twitter handle:</b>
+  <%= @speaker.twitter_handle %>
+</p>
+
+<p>
+  <b>Linkedin url:</b>
+  <%= @speaker.linkedin_url %>
+</p>
+
+<p>
+  <b>Github handle:</b>
+  <%= @speaker.github_handle %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @speaker.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_speaker_path(@speaker) %> |
+<%= link_to 'Back', speakers_path %>

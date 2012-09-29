@@ -1,0 +1,20 @@
+%div{class:"hero-unit"}
+    .ac
+        %h1 Meet the speakers
+
+#team-members
+    .row
+        -@speakers.each do |speaker|
+            %article.member.span4
+                %div{class:"member-avatar"}= image_tag(speaker.avatar, alt:"", class:"thumbnail", width:"400", height:"300")
+                
+                %p.member-networks= speaker_networks(speaker)
+                    
+                %h3{class: "member-name"}= speaker.name
+                %h4{class: "member-position"}= speaker.position
+                %p{class: "member-bio"}= speaker.bio
+
+/    <td><%= link_to 'Show', speaker %></td>
+/    <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
+/    <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+/<%= link_to 'New Speaker', new_speaker_path %>
