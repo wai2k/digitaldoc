@@ -2,7 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 
-gem 'sqlite3', :platform => [:ruby]
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
 #gem 'foreigner', :git => 'git://github.com/matthuhiggins/foreigner.git'
 
 gem 'jquery-rails'
