@@ -1,0 +1,19 @@
+.hero-unit
+  .ac
+    %h1= "Episode ##{@podcast.id}"
+    %br
+    %p= subtitle(@podcast)
+
+.hero-unit
+  .ac
+    %audio{src: @podcast.audio_url, width: "600", height: "30"}
+
+.row
+  .span12.well
+    %p= @podcast.description
+
+.row
+  .span12
+    %h3 Show Notes
+    %p= @podcast.notes
+

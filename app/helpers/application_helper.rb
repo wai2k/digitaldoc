@@ -4,6 +4,8 @@ module ApplicationHelper
     active = case item
       when :speakers 
         controller_name == "speakers"
+      when :podcasts
+        controller_name == "podcasts"
       else
         controller_name == "pages" && action_name == "index"
       end

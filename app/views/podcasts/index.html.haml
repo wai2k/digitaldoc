@@ -1,0 +1,20 @@
+.hero-unit
+  .ac
+    %h1 The Digital Doctor Podcast
+    %br
+    %p Helping doctors understand and use IT better
+
+#explore
+  - @podcasts.each do |podcast|
+    %h3= link_to podcast.title, podcast
+    %b= subtitle(podcast)
+    %br
+    %p= podcast.description
+    %p
+      = link_to podcast do
+        %i.icon-play-circle
+        Listen now
+    %hr
+
+.well.ac
+  %h3 More episodes coming soon!
