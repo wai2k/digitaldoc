@@ -25,6 +25,7 @@
                                 %li{class: menu_item_class(:index)}= link_to "Home", root_path
                                 %li{class: menu_item_class(:speakers)}= link_to "Speakers", speakers_path
                                 %li{class: menu_item_class(:schedule)}= link_to "Schedule", schedule_path
+                                %li{class: menu_item_class(:podcasts)}= link_to "Podcast", podcasts_path
                                 %li
                                     %button.btn{class:"btn-primary"}= link_to "Book Now", "http://thedigitaldoctor-estw.eventbrite.co.uk/", id:"top-button"
                                     
@@ -39,6 +40,7 @@
                         %ul
                             %li= link_to "Home", "/" 
                             %li=link_to "Book a place", "http://thedigitaldoctor-estw.eventbrite.co.uk/"
+                            %li= link_to "The Podcast", podcasts_path
                             
                     .span4{class:"social-networks"}
                         %h3 Stay in touch

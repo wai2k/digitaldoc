@@ -6,6 +6,8 @@ module ApplicationHelper
         controller_name == "speakers"
       when :schedule
         controller_name == "pages" && action_name == "schedule"
+      when :podcasts
+        controller_name == "podcasts"
       else
         controller_name == "pages" && action_name == "index"
       end

@@ -1,0 +1,44 @@
+.hero-unit
+  .ac
+    %h1= "Episode ##{@podcast.id}"
+    %br
+    %p= subtitle(@podcast)
+
+.hero-unit
+  .ac
+    %audio{src: @podcast.audio_url, width: "600", height: "30"}
+
+/ AddThis Button BEGIN
+.addthis_toolbox.addthis_default_style
+  %a.addthis_button_facebook_like{"fb:like:layout" => "button_count"}
+  %a.addthis_button_tweet
+  %a.addthis_button_pinterest_pinit
+  %a.addthis_counter.addthis_pill_style
+:javascript
+  var addthis_config = {"data_track_addressbar":true};
+%script{:src => "http://s7.addthis.com/js/300/addthis_widget.js#pubid=podmedics", :type => "text/javascript"}
+/ AddThis Button END
+
+.row
+  .span12.well
+    %p= @podcast.description
+
+.row
+  .span12
+    %h3 Show Notes
+    %p= @podcast.notes
+
+.row
+  .span12
+    #disqus_thread
+    :javascript
+      var disqus_shortname = 'thedigitaldoc'; // required: replace example with your forum shortname
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    %a.dsq-brlink{:href => "http://disqus.com"}
+      comments powered by
+      %span.logo-disqus Disqus
+
