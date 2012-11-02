@@ -1,3 +1,35 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h2.timetable {
+    margin-bottom:20px;
+}
+.event {
+    padding:15px 0px;
+    &:nth-child(odd) {
+        background:#eee;
+        color:#444;
+    };
+    .span1 {
+        width:100px;
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: bold;
+        text-rendering: optimizelegibility;
+        color:#777;
+    }
+    .by {
+        font-size:14px;
+    }
+    .description {
+        margin-top:10px;
+    }
+    ul {
+        margin:0 0 9px 20px;
+    }
+    li {
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+}
