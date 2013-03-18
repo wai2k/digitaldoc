@@ -26,7 +26,7 @@
 .row
   .span12
     %h3 Show Notes
-    %p= @podcast.notes
+    %p.show_notes= simple_format(@podcast.notes)
 
 .row
   .span12
