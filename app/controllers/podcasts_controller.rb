@@ -6,11 +6,6 @@ class PodcastsController < ApplicationController
   # GET /podcasts.json
   def index
     @podcasts = Podcast.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @podcasts }
-    end
   end
 
   # GET /podcasts/1

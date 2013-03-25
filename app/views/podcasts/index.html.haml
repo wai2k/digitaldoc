@@ -1,3 +1,5 @@
+= content_for :head, auto_discovery_link_tag(:atom, podcasts_url(format: 'atom'))
+
 .hero-unit
   .ac
     %h1 The Digital Doctor Podcast
@@ -19,7 +21,6 @@
 .well.ac
   %h3 
     Don't miss an episode. 
-    %a{href: "http://feeds.feedburner.com/TheDigitalDoctorPodcast"}
-      Subscribe to our RSS feed
+    = link_to "Subscribe to our RSS/ATOM feed", podcasts_url(format: 'atom')
     or listen to us on
     %a{href: "https://itunes.apple.com/gb/podcast/the-digital-doctor/id598478308"}iTunes
