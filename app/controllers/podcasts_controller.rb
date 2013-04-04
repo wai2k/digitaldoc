@@ -5,7 +5,7 @@ class PodcastsController < ApplicationController
   # GET /podcasts
   # GET /podcasts.json
   def index
-    @podcasts = Podcast.all
+    @podcasts = Podcast.order('created_at DESC')
   end
 
   # GET /podcasts/1
