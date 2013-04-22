@@ -27,7 +27,7 @@
 .row
   .span12.show_notes
     %h3 Show Notes
-    %p.show_notes= @podcast.notes
+    %p.show_notes= simple_format auto_link(@podcast.notes), {}, sanitize: false
 
 .row
   .span12.comments
