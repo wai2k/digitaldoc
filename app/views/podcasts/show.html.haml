@@ -1,14 +1,16 @@
 .hero-unit
   .ac
-    %h1= "Episode ##{@podcast.id}"
+    %h1= "Episode ##{@podcast.id} - #{@podcast.title}"
     %br
     %p= subtitle(@podcast)
 
 .hero-unit
-  .ac
-    %audio{src: @podcast.audio_url, width: "600", height: "30"}
+  %audio.audio_player{controls: "controls"}
+    %source{src: "#{@podcast.audio_url}", type: 'audio/mpeg;codecs="mp3"'}
+    %source{src: "#{@podcast.ogg_audio_url}", type: 'audio/ogg;codecs="vorbis"'}
+  .podcast_download_link
+    = link_to 'Download (right click and save)', @podcast.audio_url
 
-/ AddThis Button BEGIN
 .addthis_toolbox.addthis_default_style
   %a.addthis_button_facebook_like{"fb:like:layout" => "button_count"}
   %a.addthis_button_tweet
@@ -17,19 +19,18 @@
 :javascript
   var addthis_config = {"data_track_addressbar":true};
 %script{:src => "http://s7.addthis.com/js/300/addthis_widget.js#pubid=podmedics", :type => "text/javascript"}
-/ AddThis Button END
 
 .row
   .span12.well
     %p= @podcast.description
 
 .row
-  .span12
+  .span12.show_notes
     %h3 Show Notes
     %p.show_notes= @podcast.notes
 
 .row
-  .span12
+  .span12.comments
     #disqus_thread
     :javascript
       var disqus_shortname = 'thedigitaldoc'; // required: replace example with your forum shortname
