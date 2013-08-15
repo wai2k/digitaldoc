@@ -14,30 +14,30 @@
 ActiveRecord::Schema.define(:version => 20130422094821) do
 
   create_table "podcasts", :force => true do |t|
-    t.string    "title"
-    t.integer   "duration"
-    t.text      "description"
-    t.text      "notes"
-    t.string    "audio_url"
-    t.timestamp "created_at",    :null => false
-    t.timestamp "updated_at",    :null => false
-    t.string    "ogg_audio_url"
+    t.string   "title"
+    t.integer  "duration"
+    t.text     "description"
+    t.text     "notes"
+    t.string   "audio_url"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "ogg_audio_url"
   end
 
   create_table "speakers", :force => true do |t|
-    t.string    "name",                :null => false
-    t.string    "position"
-    t.string    "twitter_handle"
-    t.string    "linkedin_id"
-    t.string    "github_handle"
-    t.string    "email"
-    t.text      "bio",                 :null => false
-    t.timestamp "created_at",          :null => false
-    t.timestamp "updated_at",          :null => false
-    t.string    "avatar_file_name"
-    t.string    "avatar_content_type"
-    t.integer   "avatar_file_size"
-    t.timestamp "avatar_updated_at"
+    t.string   "name",                :null => false
+    t.string   "position"
+    t.string   "twitter_handle"
+    t.string   "linkedin_id"
+    t.string   "github_handle"
+    t.string   "email"
+    t.text     "bio",                 :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end
