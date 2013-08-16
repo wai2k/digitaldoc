@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
 gem 'rails', '3.2.13'
 
 group :production do
@@ -14,8 +15,8 @@ end
 gem 'jquery-rails'
 gem 'haml'
 gem 'paperclip'
-gem 'taps'
 gem 'rails_autolink'
+gem 'taps', '~> 0.3.24'
 
 # Gems used only for assets and not required
 # in production environments by default.
