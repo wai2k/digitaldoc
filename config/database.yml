@@ -1,25 +1,29 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+# Instructions for setup (assuming you have postgresql installed).
+
+# STEP 1: Create the user digidoc. At the command line type 'createuser digidoc'
+# STEP 2: Create the db by pasting this 'createdb -Odigidoc -Eutf8 digidoc_development'
+# STEP 3: Create the test db by pasting this 'createdb -Odigidoc -Eutf8 digidoc_test'
+# STEP 4: run bundle in the app directory
+# STEP 5: run 'rake db:setup' but db:migrate would probabily do too.
+# STEP 6: run 'pg_restore --verbose --clean --no-acl --no-owner -h localhost -U digidoc -d digidoc_development db/latest.dump'
+
+# Everything should be sorted, monkey, sweet now and the data cam from a dump I downloaded on the 16th Aug 2013. Feel free to do future dumps / backups.
+
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter:  postgresql
+  encoding: utf8
+  database: digidoc_development
+  pool:     5
+  username: digidoc
+  password:
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+# I don't think we really need this since we are not doing much testing.
+
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter:  postgresql
+  encoding: utf8
+  database: digidoc_test
+  pool:     5
+  username: digidoc
+  password:
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
