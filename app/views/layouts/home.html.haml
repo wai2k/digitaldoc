@@ -1,0 +1,7 @@
+= render partial: 'layouts/header'
+.row
+    %p.strap 
+        %span #DIGIDOC13 
+    = image_tag('digidocmono.png')                        
+    #content.container= yield
+= render partial: 'layouts/footer'

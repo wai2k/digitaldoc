@@ -6,7 +6,10 @@
     .row
         -@speakers.each do |speaker|
             %article.member.span4
-                %div{class:"member-avatar"}= image_tag(speaker.avatar, alt:"", class:"thumbnail", width:"400", height:"300")
+                %div{class:"member-avatar"}= image_tag(speaker.avatar, 
+                alt:"picture of speaker", 
+                class:"thumbnail", 
+                width:"400", height:"300")
                 
                 %p.member-networks= speaker_networks(speaker)
                     

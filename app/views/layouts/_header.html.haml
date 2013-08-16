@@ -1,0 +1,29 @@
+!!!
+%html
+    %head
+        %title The Digital Doctor Conference
+        =stylesheet_link_tag    "application", :media => "all"
+        =javascript_include_tag "application"   
+        =csrf_meta_tags
+        %link{href:'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800', rel:'stylesheet', type:'text/css'}
+        = yield :head
+    %body
+        %header#header
+            .navbar
+                %div{class:"navbar-inner"}
+                    .container
+                        %a.btn{class: "btn-navbar", data: {toggle:"collapse", target:".nav-collapse"}}
+                            %span{class:"icon-bar"}
+                            %span{class:"icon-bar"}
+                            %span{class:"icon-bar"}
+                            
+                        %a.brand{href:"/"} The <b>Digital Doctor</b>
+                        
+                        %div{class:"nav-collapse fr"}
+                            %ul.nav
+                                %li{class: menu_item_class(:index)}= link_to "Home", root_path
+                                %li{class: menu_item_class(:speakers)}= link_to "Speakers", speakers_path
+                                %li{class: menu_item_class(:schedule)}= link_to "Schedule", schedule_path
+                                %li{class: menu_item_class(:podcasts)}= link_to "Podcast", podcasts_path
+                                %li
+                                    %button.btn{class:"btn-primary"}= link_to "Book Now", "http://thedigitaldoctor-estw.eventbrite.co.uk/", id:"top-button"
