@@ -1,6 +1,6 @@
 class SpeakersController < ApplicationController
   
-  before_filter :check_admin, except: :index
+  before_filter  :authenticate, except: [:show, :index]
   
   # GET /speakers
   # GET /speakers.json
@@ -85,9 +85,11 @@ class SpeakersController < ApplicationController
   end
 
   private
-  
-    # TODO - Currently disable all admin functionality
-    def check_admin
-      false
-    end
-end
+   def authenticate
+     if user = authenticate_with_http_basic { |u, p| u == "frodo" && Digest::SHA1.hexdigest(p) == "903b51645b6b351cc124d357fcd3d22af32cce73"}
+       return true
+     else
+       request_http_basic_authentication
+     end
+   end
+end 
