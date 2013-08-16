@@ -5,7 +5,8 @@ class SpeakersController < ApplicationController
   # GET /speakers
   # GET /speakers.json
   def index
-    @speakers = Speaker.all
+    @speakers = Speaker.find(:all, :order => 'id')
+    
 
     respond_to do |format|
       format.html # index.html.erb
