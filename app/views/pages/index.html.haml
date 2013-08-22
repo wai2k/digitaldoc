@@ -2,10 +2,10 @@
 
 .row
   .span8
-    %h1.lead
+    %h1#conf_strap
       %b The Digital Doctor Conference London 2013
-      %br
-      Join us for #digidoc13 on the 9th and 10th of November   
+    %h1.lead
+      Join us for #digidoc13 on the 9th and 10th of November 
   .span4
     %p.ac
       %a{class: "btn btn-large btn-primary", 
@@ -13,6 +13,27 @@
          title: "The Digital Doctor Conference 2013: Eventbrite page",
          } 
         %b Book now! 
+.row
+  .span3
+    = link_to(image_tag("bcs_alpha.jpg", 
+      alt: "BCS logo", 
+      width: 120, 
+      height: 90,
+      title: "BCS health"),
+      "http://www.bcs.org/category/6044",
+      target: "_blank")
+  -# .span9
+  -#   %h1.lead
+  -#     %br
+  -#     Join us for #digidoc13 on the 9th and 10th of November 
+.row
+  .span12
+    %small.muted#muted_link
+      %i 
+        Supported by 
+        = link_to("BCS Health", "http://www.bcs.org/category/6044",
+          target: "_blank")
+
 
 %hr
 
