@@ -21,3 +21,8 @@
 .powrc
 .rvmrc
 .DS_store
+
+# Floobits
+.floo
+.flooignore
+.sublime-project
