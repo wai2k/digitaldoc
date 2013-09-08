@@ -26,3 +26,7 @@
 .floo
 .flooignore
 .sublime-project
+
+# Use your own database.yml
+
+config/database.yml
