@@ -1,3 +1,25 @@
-// Place all the styles related to the podcasts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+audio.audio_player {
+  display: block;
+  width: 500px;
+  height: 10px;
+  margin-bottom: 30px;
+  display: 0 auto;
+}
+
+.addthis_default_style
+{
+  float: right;
+}
+
+.show_notes {
+  margin-top: 20px;
+}
+
+.comments {
+  margin-top: 30px;
+}
+
+.long_text_area
+{
+  width: 600px;
+}
