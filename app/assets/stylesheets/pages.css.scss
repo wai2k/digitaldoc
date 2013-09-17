@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Home 
+
+#muted_link {
+  a { 
+    color: #585858;
+    &:link {text-decoration: none;}
+    &:visited  {text-decoration: none;}
+    &:hover {text-decoration: none;}
+    &:active {text-decoration: none;}
+  }
+}
+
+#conf_strap {
+  margin-bottom: 12px;
+  font-size: 2.1em;
+  font-weight: 200;
+  line-height: 27px;    
+}
+
+// Schedule 
+
 h2.timetable {
     margin-bottom:20px;
 }

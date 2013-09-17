@@ -1,13 +1,13 @@
+require 'digest/sha1'
+
 class PodcastsController < ApplicationController
+
+  before_filter :authenticate, except: [:show, :index]
+
   # GET /podcasts
   # GET /podcasts.json
   def index
-    @podcasts = Podcast.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @podcasts }
-    end
+    @podcasts = Podcast.order('created_at DESC')
   end
 
   # GET /podcasts/1
@@ -80,4 +80,14 @@ class PodcastsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+    def authenticate
+      if user = authenticate_with_http_basic { |u, p| u == "frodo" && Digest::SHA1.hexdigest(p) == "903b51645b6b351cc124d357fcd3d22af32cce73"}
+        return true
+      else
+        request_http_basic_authentication
+      end
+    end
 end
+

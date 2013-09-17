@@ -1,37 +1,31 @@
-<%= form_for(@podcast) do |f| %>
-  <% if @podcast.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@podcast.errors.count, "error") %> prohibited this podcast from being saved:</h2>
-
-      <ul>
-      <% @podcast.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @podcast, class: 'form_horizontal' do |f| %>
+  <fieldset>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :duration %><br />
-    <%= f.number_field :duration %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </div>
-  <div class="field">
-    <%= f.label :audio_url %><br />
-    <%= f.text_field :audio_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :duration %><br />
+      <%= f.number_field :duration %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description, class: 'long_text_area', rows: '7' %>
+    </div>
+    <div class="field">
+      <%= f.label :notes %><br />
+      <%= f.text_area :notes, class: 'long_text_area', rows: '7' %>
+    </div>
+    <div class="field">
+      <%= f.label :audio_url %><br />
+      <%= f.text_field :audio_url %>
+    </div>
+    <div class="field">
+      <%= f.label :ogg_audio_url %><br />
+      <%= f.text_field :ogg_audio_url %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Create/Edit', class: 'btn btn-primary btn-large' %>
+    </div>
+  </fieldset>
 <% end %>
