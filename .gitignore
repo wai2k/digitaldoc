@@ -20,7 +20,7 @@
 # Ignore .pow and .rvm files
 .powrc
 .rvmrc
-.DS_store
+.DS_Store
 
 # Floobits
 .floo
