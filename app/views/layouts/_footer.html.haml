@@ -4,48 +4,38 @@
             .span4
                 %h3 Quick links
                 %ul
-                    %li= link_to "Home", "/" 
+                    %li= link_to "Home", "/"
                     %li=link_to "Book a place", "http://digidoc13.eventbrite.co.uk/"
                     %li= link_to "The Podcast", podcasts_path
-                    
-            .span4{class:"social-networks"}
+
+            .span4
+
+
+
+            .span4.social-networks.offset4
                 %h3 Stay in touch
                 %p Stay in touch on social networks
-                
+
                 =link_to "", "https://www.facebook.com/thedigidocs",
-                class: "icon-facebook", 
+                class: "icon-facebook",
                 title:"Follow us on Facebook",
                 target: "_blank"
-                
-                =link_to "", 
-                "https://twitter.com/TheDigiDoc", 
-                title:"Follow us on Twitter", 
+
+                =link_to "",
+                "https://twitter.com/TheDigiDoc",
+                title:"Follow us on Twitter",
                 target: "_blank",
                 class:"icon-twitter"
-            
-            .span4
-                %h3 Newsletter
-                %p Subscribe to our newsletter and be the first to know about the conference news!
-                %form{action:"http://podmedics.us1.list-manage.com/subscribe/post?u=c2ce3448b95ec17ff50421ec7&amp;id=eafca49ff8", method:"post", id:"mc-embedded-subscribe-form", name:"mc-embedded-subscribe-form", class:"validate", target:"_blank", novalidate:"true"}
-                    %input{type:"email", value:"", name:"EMAIL", id:"mce-EMAIL", placeholder:"Enter your E-mail", required: true}
-                    %input.btn{type:"submit", value:        "Ok"}
-                    
 
-%div{id:"footer-extra"}
+#footer-extra.row
     .container
         .row
             .span4
-                Website &copy; The DigiDocs 2012-
-                - now = DateTime.now
-                = now.year
-            .span4
-                %i{class:"icon-phone"}
-                &nbsp; 
-                02078352320
-            .span4
-                %i{class:"icon-envelope"}
-                &nbsp; 
-                info@thedigitaldoc.co.uk
+                = "Copyright - The DigiDocs 2012-#{DateTime.now.year}"
+            .span4.offset4
+                %i.icon-envelope
+                &nbsp;
+                = mail_to "info@thedigitaldoc.co.uk"
 :javascript
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
