@@ -5,8 +5,7 @@ class SpeakersController < ApplicationController
   # GET /speakers
   # GET /speakers.json
   def index
-    @speakers = Speaker.find(:all, order: 'display_order')
-    
+    @speakers = Speaker.where(visible: true).order('display_order')
 
     respond_to do |format|
       format.html # index.html.erb
