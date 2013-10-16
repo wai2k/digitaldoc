@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130816165251) do
+ActiveRecord::Schema.define(:version => 20131007164538) do
 
   create_table "podcasts", :force => true do |t|
     t.string   "title"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130816165251) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "display_order"
+    t.boolean  "visible"
   end
 
 end
