@@ -8,7 +8,7 @@
 
 #explore
   - @podcasts.each do |podcast|
-    %h3= link_to podcast.title, podcast
+    %h3= link_to "Episode ##{podcast.id} - #{podcast.title}", podcast
     %b= subtitle(podcast)
     %br
     %p= podcast.description
@@ -19,8 +19,8 @@
     %hr
 
 .well.ac
-  %h3 
-    Don't miss an episode. 
+  %h3
+    Don't miss an episode.
     = link_to "Subscribe to our RSS/ATOM feed", podcasts_url(format: 'atom')
     or listen to us on
     %a{href: "https://itunes.apple.com/gb/podcast/the-digital-doctor/id598478308"}iTunes
