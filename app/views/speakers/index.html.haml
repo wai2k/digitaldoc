@@ -1,18 +1,18 @@
 %div{class:"hero-unit"}
     .ac
-        %h1 Meet the Digital Doctors
+        %h1 Speakers
 
 #team-members
     .row
         -@speakers.each do |speaker|
             %article.member.span4
-                %div{class:"member-avatar"}= image_tag(speaker.avatar, 
-                alt:"picture of speaker", 
-                class:"thumbnail", 
+                %div{class:"member-avatar"}= image_tag(speaker.avatar,
+                alt:"picture of speaker",
+                class:"thumbnail",
                 width:"400", height:"300")
-                
+
                 %p.member-networks= speaker_networks(speaker)
-                    
+
                 %h3{class: "member-name"}= speaker.name
                 %h4{class: "member-position"}= speaker.position
                 %p{class: "member-bio"}= speaker.bio
